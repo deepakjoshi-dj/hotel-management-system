@@ -326,59 +326,6 @@
     </style>
 
     <script tpye="text/javascript">
-        var imgNum = 0;
-        function PhotoSlider(){
-            imgNum++;
-            var localarea = document.getElementById("slider");
-            
-            var landscape = window.matchMedia("screen and (orientation:landscape)");
-            var portrait = window.matchMedia("screen and (orientation:portrait)");
-
-            var landscapeImage = ["./images/hotel-bg-1.webp","./images/hotel-bg-2.webp",
-            "./images/hotel-bg-3.webp","./images/hotel-bg-4.webp","./images/hotel-bg-5.webp"]
-            
-            var portraitImage = ["./images/hotel-bg-portrait-1.webp","./images/hotel-bg-portrait-2.webp",
-            "./images/hotel-bg-portrait-3.webp","./images/hotel-bg-portrait-4.webp","./images/hotel-bg-portrait-5.webp"]
-            
-
-            if (landscape.matches){
-                localarea.style.backgroundImage = `url(${landscapeImage[imgNum]})`;
-                if (imgNum == 4){
-                    window.imgNum = -1;
-                }
-            }
-
-            if(portrait.matches){
-                localarea.style.backgroundImage = `url(${portraitImage[imgNum]})`;
-                if (imgNum == 4){
-                    window.imgNum = -1;
-                }
-            }
-        }
-
-        function bodyload(){
-            setInterval(PhotoSlider,4000);
-            var localarea = document.getElementById("slider");
-            var landscape = window.matchMedia("screen and (orientation:landscape)");
-            var portrait = window.matchMedia("screen and (orientation:portrait)");
-
-            
-
-            var landscapeImage = ["./images/hotel-bg-1.webp"];
-
-            var portraitImage = ["./images/hotel-bg-portrait-1.webp"];
-            
-            
-            
-            if (landscape.matches){
-                localarea.style.backgroundImage = `url(${landscapeImage[imgNum]})`;
-            }
-            if(portrait.matches){
-                localarea.style.backgroundImage = `url(${portraitImage[imgNum]})`;
-            }
-            AutoDate();
-        }
-    
         // Registration Form work
 
         function NameVerify(){
@@ -978,6 +925,53 @@
 
         </div>
     </footer>
+
+    <script type="text/javascript">
+        var imgNum = 1;
+        var landscapeImage = ["./images/hotel-bg-1.webp","./images/hotel-bg-2.webp",
+            "./images/hotel-bg-3.webp","./images/hotel-bg-4.webp","./images/hotel-bg-5.webp"]
+            
+        var portraitImage = ["./images/hotel-bg-portrait-1.webp","./images/hotel-bg-portrait-2.webp",
+            "./images/hotel-bg-portrait-3.webp","./images/hotel-bg-portrait-4.webp","./images/hotel-bg-portrait-5.webp"]
+            
+        function PhotoSlider(){
+            imgNum++;
+            var localarea = document.getElementById("slider");
+            
+            var landscape = window.matchMedia("screen and (orientation:landscape)");
+            var portrait = window.matchMedia("screen and (orientation:portrait)");
+
+            if (landscape.matches){
+                localarea.style.backgroundImage = `url(${landscapeImage[imgNum]})`;
+                if (imgNum == 4){
+                    window.imgNum = -1;
+                }
+            }
+
+            if(portrait.matches){
+                localarea.style.backgroundImage = `url(${portraitImage[imgNum]})`;
+                if (imgNum == 4){
+                    window.imgNum = -1;
+                }
+            }
+        }
+
+        function bodyload(){
+            setInterval(PhotoSlider,4000);
+            var localarea = document.getElementById("slider");
+            var landscape = window.matchMedia("screen and (orientation:landscape)");
+            var portrait = window.matchMedia("screen and (orientation:portrait)");
+            
+            if (landscape.matches){
+                localarea.style.backgroundImage = `url(${landscapeImage[imgNum]})`;
+            }
+            if(portrait.matches){
+                localarea.style.backgroundImage = `url(${portraitImage[imgNum]})`;
+            }
+            AutoDate();
+        }
+    
+    </script>
 </body>
 
 </html>
