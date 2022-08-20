@@ -927,29 +927,65 @@
     </footer>
 
     <script type="text/javascript">
-        var imgNum = 1;
+        var imgNum = 0;
+        var landscape = window.matchMedia("screen and (orientation:landscape)");
+        var portrait = window.matchMedia("screen and (orientation:portrait)");
+
         var landscapeImage = ["./images/hotel-bg-1.webp","./images/hotel-bg-2.webp",
             "./images/hotel-bg-3.webp","./images/hotel-bg-4.webp","./images/hotel-bg-5.webp"]
-            
+        
+        // Loads the images one at a time, then calls the callback function when all images
+        // have been loaded
+        
+        function loadImagesLandscape(landscapeImage, index) {
+            if (index < landscapeImage.length) {
+                let img = new Image();
+                img.src = landscapeImage[index];
+                landscapeImage[index] = img;
+                loadImagesLandscape(landscapeImage, ++index)
+            } else {
+                loadImagesLandscape(landscapeImage);
+            }
+        }
+        if (landscape.matches) {
+            loadImagesLandscape(landscapeImage, 0);
+        }
+
+
+        
         var portraitImage = ["./images/hotel-bg-portrait-1.webp","./images/hotel-bg-portrait-2.webp",
             "./images/hotel-bg-portrait-3.webp","./images/hotel-bg-portrait-4.webp","./images/hotel-bg-portrait-5.webp"]
-            
+        
+        // Loads the images one at a time, then calls the callback function when all images
+        // have been loaded
+        function loadImagesPortrait(portraitImage, index) {
+            if (index < portraitImage.length) {
+                let img = new Image();
+                img.src = portraitImage[index];
+                portraitImage[index] = img;
+                loadImagesPortrait(portraitImage, ++index)
+            } else {
+                loadImagesPortrait(portraitImage);
+            }
+        }
+        if (portrait.matches) {
+            loadImagesPortrait(portraitImage, 0);
+        }
+        
+        
         function PhotoSlider(){
             imgNum++;
             var localarea = document.getElementById("slider");
             
-            var landscape = window.matchMedia("screen and (orientation:landscape)");
-            var portrait = window.matchMedia("screen and (orientation:portrait)");
-
             if (landscape.matches){
-                localarea.style.backgroundImage = `url(${landscapeImage[imgNum]})`;
+                localarea.style.backgroundImage = `url(${landscapeImage[imgNum].src})`;
                 if (imgNum == 4){
                     window.imgNum = -1;
                 }
             }
 
             if(portrait.matches){
-                localarea.style.backgroundImage = `url(${portraitImage[imgNum]})`;
+                localarea.style.backgroundImage = `url(${portraitImage[imgNum].src})`;
                 if (imgNum == 4){
                     window.imgNum = -1;
                 }
@@ -963,10 +999,10 @@
             var portrait = window.matchMedia("screen and (orientation:portrait)");
             
             if (landscape.matches){
-                localarea.style.backgroundImage = `url(${landscapeImage[imgNum]})`;
+                localarea.style.backgroundImage = `url(${landscapeImage[imgNum].src})`;
             }
             if(portrait.matches){
-                localarea.style.backgroundImage = `url(${portraitImage[imgNum]})`;
+                localarea.style.backgroundImage = `url(${portraitImage[imgNum].src})`;
             }
             AutoDate();
         }
