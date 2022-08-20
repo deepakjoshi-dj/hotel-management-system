@@ -114,7 +114,7 @@
         /* section work */
         section{
             display: none;
-            background-image: url("./images/hotel-bg-1.jpg");
+            background-image: url("./images/hotel-bg-1.webp");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -247,7 +247,7 @@
 
             section{
                 display: none;
-                background-image: url("./images/hotel-bg-portrait-1.jpg");
+                background-image: url("./images/hotel-bg-portrait-1.webp");
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
@@ -260,7 +260,7 @@
         /* Bill Generate Div work */
         .view-details-container{
             display: none;
-            background-image: url("./images/bill-img-4.jpg");
+            background-image: url("./images/bill-img-4.webp");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -334,26 +334,24 @@
             var landscape = window.matchMedia("screen and (orientation:landscape)");
             var portrait = window.matchMedia("screen and (orientation:portrait)");
 
-            var landscapeImage = ["./images/hotel-bg-1.jpg","./images/hotel-bg-2.jpg",
-            "./images/hotel-bg-3.jpg","./images/hotel-bg-4.jpg","./images/hotel-bg-5.jpg",
-            "./images/hotel-bg-6.jpg","./images/hotel-bg-7.jpg","./images/hotel-bg-8.jpg"]
+            var landscapeImage = ["./images/hotel-bg-1.webp","./images/hotel-bg-2.webp",
+            "./images/hotel-bg-3.webp","./images/hotel-bg-4.webp","./images/hotel-bg-5.webp"]
             
-            var portraitImage = ["./images/hotel-bg-portrait-1.jpg","./images/hotel-bg-portrait-2.jpg",
-            "./images/hotel-bg-portrait-3.jpg","./images/hotel-bg-portrait-4.jpg","./images/hotel-bg-portrait-5.jpg",
-            "./images/hotel-bg-portrait-6.jpg","./images/hotel-bg-portrait-7.jpg","./images/hotel-bg-portrait-8.jpg"]
+            var portraitImage = ["./images/hotel-bg-portrait-1.webp","./images/hotel-bg-portrait-2.webp",
+            "./images/hotel-bg-portrait-3.webp","./images/hotel-bg-portrait-4.webp","./images/hotel-bg-portrait-5.webp"]
             
 
             if (landscape.matches){
                 localarea.style.backgroundImage = `url(${landscapeImage[imgNum]})`;
-                if (imgNum == 7){
+                if (imgNum == 4){
                     window.imgNum = -1;
                 }
             }
 
             if(portrait.matches){
                 localarea.style.backgroundImage = `url(${portraitImage[imgNum]})`;
-                if (imgNum == 8){
-                    window.imgNum = 0;
+                if (imgNum == 4){
+                    window.imgNum = -1;
                 }
             }
         }
@@ -366,9 +364,9 @@
 
             
 
-            var landscapeImage = ["./images/hotel-bg-3.jpg"];
+            var landscapeImage = ["./images/hotel-bg-1.webp"];
 
-            var portraitImage = ["./images/hotel-bg-portrait-3.jpg"];
+            var portraitImage = ["./images/hotel-bg-portrait-1.webp"];
             
             
             
