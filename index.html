@@ -326,22 +326,32 @@
     </style>
 
     <script tpye="text/javascript">
-        var imgNum = 1;
+        var imgNum = 0;
         function PhotoSlider(){
             imgNum++;
             var localarea = document.getElementById("slider");
             
             var landscape = window.matchMedia("screen and (orientation:landscape)");
             var portrait = window.matchMedia("screen and (orientation:portrait)");
+
+            var landscapeImage = ["./images/hotel-bg-1.jpg","./images/hotel-bg-2.jpg",
+            "./images/hotel-bg-3.jpg","./images/hotel-bg-4.jpg","./images/hotel-bg-5.jpg",
+            "./images/hotel-bg-6.jpg","./images/hotel-bg-7.jpg","./images/hotel-bg-8.jpg"]
             
+            var portraitImage = ["./images/hotel-bg-portrait-1.jpg","./images/hotel-bg-portrait-2.jpg",
+            "./images/hotel-bg-portrait-3.jpg","./images/hotel-bg-portrait-4.jpg","./images/hotel-bg-portrait-5.jpg",
+            "./images/hotel-bg-portrait-6.jpg","./images/hotel-bg-portrait-7.jpg","./images/hotel-bg-portrait-8.jpg"]
+            
+
             if (landscape.matches){
-                localarea.style.backgroundImage = `url(./images/hotel-bg-${imgNum}.jpg)`;
-                if (imgNum == 8){
-                    window.imgNum = 0;
+                localarea.style.backgroundImage = `url(${landscapeImage[imgNum]})`;
+                if (imgNum == 7){
+                    window.imgNum = -1;
                 }
             }
+
             if(portrait.matches){
-                localarea.style.backgroundImage = `url(./images/hotel-bg-portrait-${imgNum}.jpg)`;
+                localarea.style.backgroundImage = `url(${portraitImage[imgNum]})`;
                 if (imgNum == 8){
                     window.imgNum = 0;
                 }
@@ -356,11 +366,17 @@
 
             
 
+            var landscapeImage = ["./images/hotel-bg-3.jpg"];
+
+            var portraitImage = ["./images/hotel-bg-portrait-3.jpg"];
+            
+            
+            
             if (landscape.matches){
-                localarea.style.backgroundImage = `url(./images/hotel-bg-${imgNum}.jpg)`;
+                localarea.style.backgroundImage = `url(${landscapeImage[imgNum]})`;
             }
             if(portrait.matches){
-                localarea.style.backgroundImage = `url(./images/hotel-bg-portrait-${imgNum}.jpg)`;
+                localarea.style.backgroundImage = `url(${portraitImage[imgNum]})`;
             }
             AutoDate();
         }
