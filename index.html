@@ -982,6 +982,14 @@
     </footer>
 
     <script type="text/javascript">
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function(){
+            loader.style.display = "none";
+        })
+    </script>
+
+    <script type="text/javascript">
         var imgNum = 0;
         var landscape = window.matchMedia("screen and (orientation:landscape)");
         var portrait = window.matchMedia("screen and (orientation:portrait)");
@@ -1064,13 +1072,7 @@
     
     </script>
 
-    <script type="text/javascript">
-        var loader = document.getElementById("preloader");
-
-        window.addEventListener("load", function(){
-            loader.style.display = "none";
-        })
-    </script>
+    
 
 </body>
 
