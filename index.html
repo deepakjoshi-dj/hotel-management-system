@@ -343,23 +343,55 @@
             align-items: center;
             color:white;
         }
-        .caption div{
-            margin-top:20vh;
-        }
+        
         .caption h2{
-            margin: 0px;
             text-align: center;
             letter-spacing: 5px;
-            font-size: 3rem;
             color:transparent;
             -webkit-text-stroke-width: 1.5px;
             -webkit-text-stroke-color: white;
             font-variant: small-caps;
         }
+        @media  screen and (orientation:landscape) {
+            .caption h2{
+                font-size: 5rem;
+                margin:0px;
+                
+            }
+            .caption p{
+                font-size: 1.8rem;
+                word-spacing: 10px;
+                letter-spacing: 5px;
+                margin-top:0px;
+            }
+            .caption div{
+                margin-top:20vh;
+            }
+        }
+
+        @media screen and (orientation:portrait) {
+            .caption h2{
+                font-size: 2rem;
+                /* text-decoration: overline dotted; */
+                border: 3px inset white;
+                box-shadow: 2px 2px 5px white;
+                width:40vh;
+                margin:auto;
+                margin-bottom: 15px;
+            }
+            .caption p{
+                font-size: 1rem;
+            }
+            .caption div{
+                margin-top:25vh;
+            }
+        }
         
         .caption p{
+            margin:0px;
+            word-spacing: 5px;
+            text-shadow: 1px 1px 2px black;
             text-align: center; 
-            font-size: 1.5rem;
             line-height: 40px;
             font-variant: small-caps;
         }
@@ -806,7 +838,7 @@
             <div class="caption">
                 <div>
                     <h2>Hotel Joshi's</h2>
-                    <p>We know that you belong in this atmosphere. So we built this hotel for you.<br>
+                    <p>We know that you belong in this atmosphere.<br> So we built this hotel for you.<br>
                         
                         Stay with us and enjoy the luxuries meant for royalty alone.
                     </p>
