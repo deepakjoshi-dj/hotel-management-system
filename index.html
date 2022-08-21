@@ -323,6 +323,16 @@
             }
         }
 
+        #preloader{
+            background: black url("./images/loader.gif") no-repeat center center;
+            background-size: 15%;
+            color:white;
+            margin: 0px;
+            height: 100vh;
+            width:100%;
+            position: fixed;
+            z-index: 100;
+        }
     </style>
 
     <script tpye="text/javascript">
@@ -745,6 +755,7 @@
 
 
 <body onload="bodyload()">
+    <div id="preloader"></div>
     <header>
         <div class="heading">
             Joshi's Hotel
@@ -1010,6 +1021,15 @@
         }
     
     </script>
+
+    <script type="text/javascript">
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function(){
+            loader.style.display = "none";
+        })
+    </script>
+
 </body>
 
 </html>
