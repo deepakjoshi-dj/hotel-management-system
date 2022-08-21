@@ -331,17 +331,19 @@
         function NameVerify(){
             var name = document.getElementById("name-input").value;
             var nameMsg = document.getElementById("name-msg");
-            var pattern = /(?=.*[\W0-9]).{1,30}/;
-            if (name == ""){
+            var pattern = /^[a-zA-Z ]{1,30}$/;
+            if (name == "") {
                 nameMsg.innerHTML = "Customer Name Must Be Required".fontcolor("red");
-            }else if((name.match(pattern))){
-                nameMsg.innerHTML="Only Alphabet Allowed".fontcolor("red");
-            }else if(name.length < 3){
-                nameMsg.innerHTML="Customer Name have Atleast 3 Character".fontcolor("red");
-            }else if(name.length > 30){
-                nameMsg.innerHTML="Customer Name have Maximum 30 Character".fontcolor("red");
-            }else{
-                nameMsg.innerHTML="";
+            } else if (!(name.match(pattern))) {
+                nameMsg.innerHTML = "Only Alphabet Allowed".fontcolor("red");
+            } else if (name.indexOf("  ") != -1) {
+                nameMsg.innerHTML = "Multiple spaces not allowed".fontcolor("red");
+            } else if (name.trim().length < 3) {
+                nameMsg.innerHTML = "Customer Name have Atleast 3 Character".fontcolor("red");
+            } else if (name.length > 30) {
+                nameMsg.innerHTML = "Customer Name have Maximum 30 Character".fontcolor("red");
+            } else {
+                nameMsg.innerHTML = "";
             }
         }
 
