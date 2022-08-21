@@ -60,9 +60,12 @@
             background-attachment: fixed;
         }
         .bg-blur{
-            background-color: rgba(1,1,1,0.5);
-            width:100%;
+            background-image: linear-gradient(180deg,rgba(102, 0, 2, 0.751),rgba(0, 0, 0, 0.672),rgba(0, 0, 0, 0.516),rgba(98, 207, 24, 0.664));
             height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         /* ----------------------------------------------------------------------- */
@@ -332,6 +335,33 @@
             width:100%;
             position: fixed;
             z-index: 100;
+        }
+
+        .caption{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:white;
+        }
+        .caption div{
+            margin-top:20vh;
+        }
+        .caption h2{
+            margin: 0px;
+            text-align: center;
+            letter-spacing: 5px;
+            font-size: 3rem;
+            color:transparent;
+            -webkit-text-stroke-width: 1.5px;
+            -webkit-text-stroke-color: white;
+            font-variant: small-caps;
+        }
+        
+        .caption p{
+            text-align: center; 
+            font-size: 1.5rem;
+            line-height: 40px;
+            font-variant: small-caps;
         }
     </style>
 
@@ -769,7 +799,15 @@
     </header>
     <main class="slider" id="slider">
         <div class="bg-blur">
-
+            <div class="caption">
+                <div>
+                    <h2>Hotel Joshi's</h2>
+                    <p>We know that you belong in this atmosphere. So we built this hotel for you.<br>
+                        
+                        Stay with us and enjoy the luxuries meant for royalty alone.
+                    </p>
+                </div>
+            </div>
         </div>
     </main>
     <section>
@@ -781,12 +819,12 @@
                         <dl class="customer-details">
                             <dt>Customer Name</dt>
                             <dd>
-                                <input type="text" id="name-input" onblur="NameVerify()">
+                                <input type="text" id="name-input" placeholder="First Name" maxlength="30" onblur="NameVerify()">
                                 <p id="name-msg"></p>
                             </dd>
                             <dt>Total No of Person</dt>
                             <dd>
-                                <input type="number" id="person-input" min="1" max="5" onblur="PersonVerify()">
+                                <input type="number" id="person-input" placeholder="Max 5 person" min="1" max="5" onblur="PersonVerify()">
                                 <p id="person-msg"></p>
                             </dd>
                             <dt>Check In-Date</dt>
@@ -796,12 +834,12 @@
                             </dd>
                             <dt>Total No of Days</dt>
                             <dd>
-                                <input type="number" id="total-days-input" min="1" max="30" onblur="DayVerify()">
+                                <input type="number" id="total-days-input" placeholder="Max 30 days" min="1" max="30" onblur="DayVerify()">
                                 <p id="total-days-msg"></p>
                             </dd>
                             <dt>Advance Amount</dt>
                             <dd>
-                                <input type="number" id="advance-amount-input" min="1000" max="2400" onblur="AmountVerify()">
+                                <input type="number" id="advance-amount-input" placeholder="Min-1000 Max-2400" min="1000" max="2400" onblur="AmountVerify()">
                                 <p id="advance-amount-msg"></p>
                             </dd>
                             
@@ -862,7 +900,7 @@
                     <legend>Joshi's Hotel Bill</legend>
                     <dl class="bill-data">
                         <dt>Customer Name:</dt>
-                        <dd id="customer-name-data"></dd>
+                        <dd style="word-break:break-all;" id="customer-name-data"></dd>
                         <dd>----</dd>
     
                         <dt>Check In-Date:</dt>
