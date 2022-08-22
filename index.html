@@ -718,101 +718,7 @@
             }
         }
 
-        function DataFetch(){
-            document.getElementById("customer-name-data").innerHTML = verifyNameInput.toUpperCase();
-            document.getElementById("in-date-data").innerHTML = verifyInDateInput;
-            document.getElementById("total-person-data").innerHTML = verifyPersonInput;
-            document.getElementById("total-days-data").innerHTML = verifyDaysInput;
-            document.getElementById("advance-amount-data").innerHTML= -verifyAmountInput+"<hr>";
-
-            function TotalPersonData(){
-                window.personValue = 0;
-                if (verifyPersonInput <= 2){
-                    personValue = 0;
-                    return 0;
-                }else{
-                    var personCount = verifyPersonInput-2;
-                    personValue = personCount*(verifyDaysInput*1000);
-                    return personCount*(verifyDaysInput*1000);
-                }
-            }
-            document.getElementById("total-person-amount-data").innerHTML = TotalPersonData();
-
-
-            function RoomTypeData(){
-                if (deluxRoomValue==deluxRoomSelected){
-                    return "Delux-Room";
-                }
-                if (suiteRoomValue==suiteRoomSelected){
-                    return "Suite-Room";
-                }
-            }
-            document.getElementById("room-type-data").innerHTML = RoomTypeData();
-
-
-            function RoomTypeAmountData(){
-                window.roomValue = 0
-                if (deluxRoomValue==deluxRoomSelected){
-                    roomValue = 2500*verifyDaysInput;
-                    return 2500*verifyDaysInput;
-                }
-                if (suiteRoomValue==suiteRoomSelected){
-                    roomValue = 4000*verifyDaysInput;
-                    return 4000*verifyDaysInput;
-                }
-            }
-            document.getElementById("room-type-amount-data").innerHTML = RoomTypeAmountData();
         
-            
-            function AmenitiesTypeData(){
-                if ((acRoomValue==acRoomSelected) && (lockerRoomValue==lockerRoomSelected)){
-                    return "A/C, Locker"
-                }else if((acRoomValue==acRoomSelected)){
-                    return "A/C"
-                }else if((lockerRoomValue==lockerRoomSelected)){
-                    return "Locker"
-                }else {
-                    return "Not Added"
-                }
-            }
-            document.getElementById("amenities-type-data").innerHTML = AmenitiesTypeData();
-
-            
-            function AmenitiesTypeAmountData(){
-                window.amenitiesValue = 0;
-                if ((acRoomValue==acRoomSelected) && (lockerRoomValue==lockerRoomSelected)){
-                    amenitiesValue = (1000+300)*verifyDaysInput;
-                    return (1000+300)*verifyDaysInput;
-                }else if((acRoomValue==acRoomSelected)){
-                    amenitiesValue = 1000*verifyDaysInput;
-                    return 1000*verifyDaysInput;
-                }else if((lockerRoomValue==lockerRoomSelected)){
-                    amenitiesValue = 300*verifyDaysInput;
-                    return 300*verifyDaysInput;
-                }else {
-                    amenitiesValue = 0;
-                    return 0;
-                }
-            }
-            document.getElementById("amenities-type-amount-data").innerHTML = AmenitiesTypeAmountData()+"<hr>";
-        
-            
-            function GrossAmountData(){
-                window.grossTotal = 0;
-                grossTotal = personValue+roomValue+amenitiesValue;
-                return grossTotal;
-            }
-            document.getElementById("gross-amount-data").innerHTML = GrossAmountData();
-        
-            
-            function ExtraPayData(){
-                window.extraPay = 0;
-                extraPay = grossTotal-verifyAmountInput;
-                return Number(Math.round(extraPay+'e2')+'e-2');
-            }
-            document.getElementById("extra-pay-data").innerHTML = "&#8377; "+ExtraPayData()+" /-<hr>";
-        }
-    
     </script>
 
 </head>
@@ -1025,6 +931,102 @@
                 location.reload();
             }
         }
+
+        function DataFetch(){
+            document.getElementById("customer-name-data").innerHTML = verifyNameInput.toUpperCase();
+            document.getElementById("in-date-data").innerHTML = verifyInDateInput;
+            document.getElementById("total-person-data").innerHTML = verifyPersonInput;
+            document.getElementById("total-days-data").innerHTML = verifyDaysInput;
+            document.getElementById("advance-amount-data").innerHTML= -verifyAmountInput+"<hr>";
+
+            function TotalPersonData(){
+                window.personValue = 0;
+                if (verifyPersonInput <= 2){
+                    personValue = 0;
+                    return 0;
+                }else{
+                    var personCount = verifyPersonInput-2;
+                    personValue = personCount*(verifyDaysInput*1000);
+                    return personCount*(verifyDaysInput*1000);
+                }
+            }
+            document.getElementById("total-person-amount-data").innerHTML = TotalPersonData();
+
+
+            function RoomTypeData(){
+                if (deluxRoomValue==deluxRoomSelected){
+                    return "Delux-Room";
+                }
+                if (suiteRoomValue==suiteRoomSelected){
+                    return "Suite-Room";
+                }
+            }
+            document.getElementById("room-type-data").innerHTML = RoomTypeData();
+
+
+            function RoomTypeAmountData(){
+                window.roomValue = 0
+                if (deluxRoomValue==deluxRoomSelected){
+                    roomValue = 2500*verifyDaysInput;
+                    return 2500*verifyDaysInput;
+                }
+                if (suiteRoomValue==suiteRoomSelected){
+                    roomValue = 4000*verifyDaysInput;
+                    return 4000*verifyDaysInput;
+                }
+            }
+            document.getElementById("room-type-amount-data").innerHTML = RoomTypeAmountData();
+        
+            
+            function AmenitiesTypeData(){
+                if ((acRoomValue==acRoomSelected) && (lockerRoomValue==lockerRoomSelected)){
+                    return "A/C, Locker"
+                }else if((acRoomValue==acRoomSelected)){
+                    return "A/C"
+                }else if((lockerRoomValue==lockerRoomSelected)){
+                    return "Locker"
+                }else {
+                    return "Not Added"
+                }
+            }
+            document.getElementById("amenities-type-data").innerHTML = AmenitiesTypeData();
+
+            
+            function AmenitiesTypeAmountData(){
+                window.amenitiesValue = 0;
+                if ((acRoomValue==acRoomSelected) && (lockerRoomValue==lockerRoomSelected)){
+                    amenitiesValue = (1000+300)*verifyDaysInput;
+                    return (1000+300)*verifyDaysInput;
+                }else if((acRoomValue==acRoomSelected)){
+                    amenitiesValue = 1000*verifyDaysInput;
+                    return 1000*verifyDaysInput;
+                }else if((lockerRoomValue==lockerRoomSelected)){
+                    amenitiesValue = 300*verifyDaysInput;
+                    return 300*verifyDaysInput;
+                }else {
+                    amenitiesValue = 0;
+                    return 0;
+                }
+            }
+            document.getElementById("amenities-type-amount-data").innerHTML = AmenitiesTypeAmountData()+"<hr>";
+        
+            
+            function GrossAmountData(){
+                window.grossTotal = 0;
+                grossTotal = personValue+roomValue+amenitiesValue;
+                return grossTotal;
+            }
+            document.getElementById("gross-amount-data").innerHTML = GrossAmountData();
+        
+            
+            function ExtraPayData(){
+                window.extraPay = 0;
+                extraPay = grossTotal-verifyAmountInput;
+                return Number(Math.round(extraPay+'e2')+'e-2');
+            }
+            document.getElementById("extra-pay-data").innerHTML = "&#8377; "+ExtraPayData()+" /-<hr>";
+        }
+    
     </script>
 
     <script type="text/javascript">
