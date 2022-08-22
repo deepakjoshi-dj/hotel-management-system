@@ -692,6 +692,25 @@
         }
 
         
+
+        var viewDetailsClick = "off"
+        function ViewDetailsClick(){
+            if (viewDetailsClick == "off"){
+                DataFetch()
+                document.querySelector(".view-details-link").innerText="Cancel";
+                document.querySelector("main").style.display="none";
+                document.querySelector("footer").style.display="none";
+                document.querySelector(".view-details-container").style.display="block";
+                viewDetailsClick = "on";
+            }else{
+                document.querySelector(".view-details-link").innerText="View Details";
+                document.querySelector("main").style.display="block";
+                document.querySelector("footer").style.display="block";
+                document.querySelector(".view-details-container").style.display="none";
+                viewDetailsClick = "off";
+            }
+        }
+
         function DataFetch(){
             document.getElementById("customer-name-data").innerHTML = verifyNameInput.toUpperCase();
             document.getElementById("in-date-data").innerHTML = verifyInDateInput;
@@ -991,6 +1010,17 @@
         window.addEventListener("load", function(){
             loader.style.display = "none";
         })
+
+        function PrintClick(){
+            var userAns = confirm("After Print Data Will Be Delete\nDo You Want to Continue");
+            if (userAns == true){
+                document.querySelector("header").style.display="none";
+                document.querySelector(".print-button").style.display="none";
+                window.print();
+                location.reload();
+                
+            }
+        }
     </script>
 
     <script type="text/javascript">
@@ -1073,36 +1103,6 @@
             }
             AutoDate();
         }
-
-        function PrintClick(){
-            var userAns = confirm("After Print Data Will Be Delete\nDo You Want to Continue");
-            if (userAns == true){
-                document.querySelector("header").style.display="none";
-                document.querySelector(".print-button").style.display="none";
-                window.print();
-                location.reload();
-                
-            }
-        }
-
-        var viewDetailsClick = "off"
-        function ViewDetailsClick(){
-            if (viewDetailsClick == "off"){
-                DataFetch()
-                document.querySelector(".view-details-link").innerText="Cancel";
-                document.querySelector("main").style.display="none";
-                document.querySelector("footer").style.display="none";
-                document.querySelector(".view-details-container").style.display="block";
-                viewDetailsClick = "on";
-            }else{
-                document.querySelector(".view-details-link").innerText="View Details";
-                document.querySelector("main").style.display="block";
-                document.querySelector("footer").style.display="block";
-                document.querySelector(".view-details-container").style.display="none";
-                viewDetailsClick = "off";
-            }
-        }
-
     
     </script>
 
