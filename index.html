@@ -324,6 +324,13 @@
                 border:2px solid black;
                 padding:5px;
             }
+            header,main,section,footer{
+                display: none;
+            }
+            .view-details-container{
+                display: block;
+            }
+
         }
 
         #preloader{
@@ -1014,11 +1021,8 @@
         function PrintClick(){
             var userAns = confirm("After Print Data Will Be Delete\nDo You Want to Continue");
             if (userAns == true){
-                document.querySelector("header").style.display="none";
-                document.querySelector(".print-button").style.display="none";
                 window.print();
                 location.reload();
-                
             }
         }
     </script>
